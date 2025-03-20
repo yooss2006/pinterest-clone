@@ -12,20 +12,20 @@ export function NavPopover() {
   const isOpen =
     store.isUpdateOpen || store.isMessageOpen || store.isSettingOpen;
 
-  const handleOpenChange = (open: boolean) => {
-    if (!open) {
-      store.reset();
-    }
-  };
-
   return (
-    <Popover open={isOpen} onOpenChange={handleOpenChange}>
+    <Popover open={isOpen}>
       <PopoverTrigger />
       <PopoverContent
         side="right"
         align="start"
         sideOffset={30}
-        alignOffset={10}
+        className="w-[392px] max-w-[392px] translate-y-[-16px]"
+        onPointerDownOutside={(event) => {
+          const target = event.target as HTMLElement;
+          if (!target.dataset.isNavButton) {
+            store.reset();
+          }
+        }}
       >
         <div>하이</div>
       </PopoverContent>
