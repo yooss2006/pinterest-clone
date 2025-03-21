@@ -1,4 +1,5 @@
 "use client";
+import SettingPopover from "@/components/layout/nav/setting-popover";
 import {
   Popover,
   PopoverContent,
@@ -27,7 +28,11 @@ export function NavPopover() {
           }
         }}
       >
-        <div>하이</div>
+        {(() => {
+          if (store.isUpdateOpen) return <div>업데이트</div>;
+          if (store.isMessageOpen) return <div>메시지</div>;
+          if (store.isSettingOpen) return <SettingPopover />;
+        })()}
       </PopoverContent>
     </Popover>
   );
