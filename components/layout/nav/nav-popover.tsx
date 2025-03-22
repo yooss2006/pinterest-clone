@@ -1,4 +1,5 @@
 "use client";
+import MessagePopover from "@/components/layout/nav/message-popover";
 import SettingPopover from "@/components/layout/nav/setting-popover";
 import UpdatePopover from "@/components/layout/nav/update-popover";
 import {
@@ -31,7 +32,7 @@ export function NavPopover() {
       >
         {(() => {
           if (store.isUpdateOpen) return <UpdatePopover />;
-          if (store.isMessageOpen) return <div>메시지</div>;
+          if (store.isMessageOpen) return <MessagePopover />;
           if (store.isSettingOpen) return <SettingPopover />;
         })()}
       </PopoverContent>
