@@ -1,5 +1,6 @@
 "use client";
 import SettingPopover from "@/components/layout/nav/setting-popover";
+import UpdatePopover from "@/components/layout/nav/update-popover";
 import {
   Popover,
   PopoverContent,
@@ -20,7 +21,7 @@ export function NavPopover() {
         side="right"
         align="start"
         sideOffset={30}
-        className="w-[392px] max-w-[392px] translate-y-[-16px]"
+        className="w-[392px] max-w-[392px] translate-y-[-16px] p-0"
         onPointerDownOutside={(event) => {
           const target = event.target as HTMLElement;
           if (!target.dataset.isNavButton) {
@@ -29,7 +30,7 @@ export function NavPopover() {
         }}
       >
         {(() => {
-          if (store.isUpdateOpen) return <div>업데이트</div>;
+          if (store.isUpdateOpen) return <UpdatePopover />;
           if (store.isMessageOpen) return <div>메시지</div>;
           if (store.isSettingOpen) return <SettingPopover />;
         })()}

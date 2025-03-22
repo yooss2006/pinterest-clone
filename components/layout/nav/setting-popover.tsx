@@ -8,7 +8,7 @@ const commonStyle =
 
 export default function SettingPopover() {
   return (
-    <section>
+    <section className="p-2">
       <h2 className="sr-only">설정</h2>
       <ul className="mb-4">
         {["설정", "홈피드 조정"].map((text) => (
