@@ -39,7 +39,7 @@ export function NavButton({ label, icon, keyword, ...props }: NavButtonProps) {
         store.toggleSetting();
         break;
     }
-  }, [keyword]);
+  }, [keyword, store]);
 
   return (
     <button
