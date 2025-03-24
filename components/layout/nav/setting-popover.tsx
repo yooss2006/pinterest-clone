@@ -28,7 +28,7 @@ const buttonOption = {
 };
 
 const commonStyle =
-  "w-full h-fit px-4 py-3 justify-between font-semibold text-base/5 focus-visible:shadow-none";
+  "w-full h-fit px-4 py-3 cursor-pointer justify-between font-semibold text-base/5 focus-visible:outline-none focus-visible:ring-0 focus-visible:shadow-none";
 
 const SettingList = ({
   items,

@@ -11,7 +11,7 @@ import { Ellipsis, X } from "lucide-react";
 import React from "react";
 
 const commonButtonClasses = cn(
-  "p-2 rounded-full",
+  "p-2 rounded-full cursor-pointer",
   "duration-75 hover:bg-gray-100"
 );
 

@@ -21,8 +21,8 @@ export function NavPopover() {
       <PopoverContent
         side="right"
         align="start"
-        sideOffset={30}
-        className="w-[392px] max-w-[392px] translate-y-[-16px] p-0"
+        sideOffset={20}
+        className="w-[392px] max-w-[392px] translate-y-[-16px] p-0 rounded-2xl border-none shadow-xl inset-shadow-2xs"
         onPointerDownOutside={(event) => {
           const target = event.target as HTMLElement;
           if (!target.dataset.isNavButton) {
