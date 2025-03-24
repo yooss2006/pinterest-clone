@@ -18,7 +18,7 @@ const SettingList = ({
   <ul className="mb-4 last:mb-0">
     {items.map((text) => (
       <li key={`setting-${text}`}>
-        <Button className={cn(commonStyle)} variant="ghost">
+        <Button className={cn(commonStyle)} variant="ghost" title={text}>
           <span>{text}</span>
           {withIcon && <SquareArrowOutUpRight />}
         </Button>
