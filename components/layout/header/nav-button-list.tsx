@@ -1,4 +1,4 @@
-import { NavButton } from "@/components/layout/nav/nav-button";
+import { NavButton } from "@/components/layout/header/nav-button";
 
 const navButtonList = [
   { icon: "/icon/update.svg", label: "업데이트", keyword: "update" },

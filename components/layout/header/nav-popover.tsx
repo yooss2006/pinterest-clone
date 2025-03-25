@@ -1,7 +1,7 @@
 "use client";
-import MessagePopover from "@/components/layout/nav/message-popover";
-import SettingPopover from "@/components/layout/nav/setting-popover";
-import UpdatePopover from "@/components/layout/nav/update-popover";
+import MessagePopover from "@/components/layout/header/message-popover";
+import SettingPopover from "@/components/layout/header/setting-popover";
+import UpdatePopover from "@/components/layout/header/update-popover";
 import {
   Popover,
   PopoverContent,

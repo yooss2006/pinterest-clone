@@ -1,6 +1,6 @@
-import { NavLink } from "@/components/layout/nav/nav-link";
-import { NavButtonList } from "@/components/layout/nav/nav-button-list";
-import { NavPopover } from "@/components/layout/nav/nav-popover";
+import { NavLink } from "./nav-link";
+import { NavButtonList } from "./nav-button-list";
+import { NavPopover } from "./nav-popover";
 
 const navLinkList = [
   { href: "/", icon: "/icon/home.svg", label: "홈" },
