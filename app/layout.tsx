@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header/header";
+import { SearchForm } from "@/components/layout/search/search-form";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,12 @@ export default function RootLayout({
       >
         <div className="h-full flex">
           <Header />
-          <main className="w-full overflow-y-scroll">{children}</main>
+          <main className="w-full overflow-y-scroll">
+            <section aria-label="검색 및 프로필" className="px-5 py-4">
+              <SearchForm />
+            </section>
+            {children}
+          </main>
         </div>
       </body>
     </html>
