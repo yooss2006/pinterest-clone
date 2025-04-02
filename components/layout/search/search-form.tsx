@@ -1,11 +1,12 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
-import { ChevronDown, Search } from "lucide-react";
-import React, { useState } from "react"; // useState 추가
+'use client';
+import { Button } from '@/components/ui/button';
 
-const hoverBgClass = "bg-gray-200";
+import { ChevronDown, Search } from 'lucide-react';
+import React, { useState } from 'react'; // useState 추가
+import { Input } from '@/components/ui/input';
+import { cn } from '@/lib/utils';
+
+const hoverBgClass = 'bg-gray-200';
 
 export function SearchForm() {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,11 +15,11 @@ export function SearchForm() {
 
   return (
     <form>
-      <div className="h-12 flex items-center">
+      <div className="flex h-12 items-center">
         {/* 왼쪽 아이콘 영역 */}
         <div
           className={cn(
-            "h-full pl-4 flex items-center rounded-l-xl bg-gray-100 transition-colors duration-150",
+            'flex h-full items-center rounded-l-xl bg-gray-100 pl-4 transition-colors duration-150',
             isHovered && hoverBgClass
           )}
           onMouseEnter={handleHover(true)}
@@ -31,9 +32,9 @@ export function SearchForm() {
         <Input
           placeholder="내 핀 검색"
           className={cn(
-            "w-full h-full bg-gray-100 border-none shadow-none rounded-none transition-colors duration-150",
-            "placeholder:text-base placeholder:text-gray-900",
-            "focus:outline-none focus:ring-0 focus-visible:ring-0",
+            'h-full w-full rounded-none border-none bg-gray-100 shadow-none transition-colors duration-150',
+            'placeholder:text-base placeholder:text-gray-900',
+            'focus:ring-0 focus:outline-none focus-visible:ring-0',
             isHovered && hoverBgClass
           )}
           onMouseEnter={handleHover(true)}
@@ -43,16 +44,16 @@ export function SearchForm() {
         {/* 버튼을 감싸는 영역 */}
         <div
           className={cn(
-            "h-full flex items-center rounded-r-xl bg-gray-100 relative transition-colors duration-150",
-            "after:w-0.5 after:h-7 after:-left-1 after:absolute after:bg-gray-300",
+            'relative flex h-full items-center rounded-r-xl bg-gray-100 transition-colors duration-150',
+            'after:absolute after:-left-1 after:h-7 after:w-0.5 after:bg-gray-300',
             isHovered && hoverBgClass
           )}
         >
           <Button
             variant="ghost"
             className={cn(
-              "h-full ml-1 px-8 font-bold cursor-pointer rounded-r-lg",
-              "hover:bg-gray-300"
+              'ml-1 h-full cursor-pointer rounded-r-lg px-8 font-bold',
+              'hover:bg-gray-300'
             )}
             type="button"
           >

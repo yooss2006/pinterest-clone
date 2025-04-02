@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { navItemClasses } from "@/components/layout/header/nav-styles";
-import { useNavPopoverStore } from "@/store/useNavPopoverStore";
-import Image from "next/image";
-import { ButtonHTMLAttributes, useCallback, useMemo } from "react";
+import { navItemClasses } from '@/components/layout/header/nav-styles';
+import { useNavPopoverStore } from '@/store/useNavPopoverStore';
+import Image from 'next/image';
+import { ButtonHTMLAttributes, useCallback, useMemo } from 'react';
 
 type NavButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   icon: string;
@@ -16,11 +16,11 @@ export function NavButton({ label, icon, keyword, ...props }: NavButtonProps) {
 
   const isPopoverOpen = useMemo(() => {
     switch (keyword) {
-      case "update":
+      case 'update':
         return store.isUpdateOpen;
-      case "message":
+      case 'message':
         return store.isMessageOpen;
-      case "setting":
+      case 'setting':
         return store.isSettingOpen;
       default:
         return false;
@@ -29,13 +29,13 @@ export function NavButton({ label, icon, keyword, ...props }: NavButtonProps) {
 
   const handleClick = useCallback(() => {
     switch (keyword) {
-      case "update":
+      case 'update':
         store.toggleUpdate();
         break;
-      case "message":
+      case 'message':
         store.toggleMessage();
         break;
-      case "setting":
+      case 'setting':
         store.toggleSetting();
         break;
     }
@@ -50,7 +50,7 @@ export function NavButton({ label, icon, keyword, ...props }: NavButtonProps) {
       onClick={handleClick}
     >
       <Image
-        src={isPopoverOpen ? `${icon.split(".svg")[0]}-fill.svg` : icon}
+        src={isPopoverOpen ? `${icon.split('.svg')[0]}-fill.svg` : icon}
         width={20}
         height={20}
         alt={label}

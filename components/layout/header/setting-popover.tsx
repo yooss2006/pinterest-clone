@@ -1,39 +1,29 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import React, { useEffect, useRef, useState } from "react";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import React, { useEffect, useRef, useState } from 'react';
+import { SquareArrowOutUpRight } from 'lucide-react';
 
 const buttonOption = {
-  setting: { options: ["설정", "홈피드 조정"], withIcon: false },
+  setting: { options: ['설정', '홈피드 조정'], withIcon: false },
   governance: {
-    options: [
-      "외부 계정 소유권 표시",
-      "Chrome 앱 설치",
-      "신고 및 위반 센터",
-      "개인정보 보호권",
-    ],
-    withIcon: false,
+    options: ['외부 계정 소유권 표시', 'Chrome 앱 설치', '신고 및 위반 센터', '개인정보 보호권'],
+    withIcon: false
   },
   resources: {
-    options: [
-      "도움말 센터",
-      "서비스 약관",
-      "개인정보처리방침",
-      "베타 테스터 되기",
-    ],
-    withIcon: true,
-  },
+    options: ['도움말 센터', '서비스 약관', '개인정보처리방침', '베타 테스터 되기'],
+    withIcon: true
+  }
 };
 
 const commonStyle =
-  "w-full h-fit px-4 py-3 cursor-pointer justify-between font-semibold text-base/5 focus-visible:outline-none focus-visible:ring-0 focus-visible:shadow-none";
+  'w-full h-fit px-4 py-3 cursor-pointer justify-between font-semibold text-base/5 focus-visible:outline-none focus-visible:ring-0 focus-visible:shadow-none';
 
 const SettingList = ({
   items,
   withIcon = false,
-  active,
+  active
 }: {
   items: string[];
   withIcon?: boolean;
@@ -43,7 +33,7 @@ const SettingList = ({
     {items.map((text) => (
       <li key={`setting-${text}`}>
         <Button
-          className={cn(commonStyle, active === text && "bg-gray-100")}
+          className={cn(commonStyle, active === text && 'bg-gray-100')}
           variant="ghost"
           title={text}
           data-setting={text}
@@ -66,22 +56,20 @@ export default function SettingPopover() {
     const handleHover = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
 
-      const button = target.closest(
-        "button[data-setting]"
-      ) as HTMLElement | null;
+      const button = target.closest('button[data-setting]') as HTMLElement | null;
 
       if (button) {
-        const text = button.getAttribute("data-setting");
+        const text = button.getAttribute('data-setting');
         if (text) setActive(text);
       }
     };
 
     if (section) {
-      section.addEventListener("mouseover", handleHover, true);
+      section.addEventListener('mouseover', handleHover, true);
     }
 
     return () => {
-      section?.removeEventListener("mouseover", handleHover, true);
+      section?.removeEventListener('mouseover', handleHover, true);
     };
   }, []);
 

@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export default function UpdatePopover() {
   return (
-    <section className="h-[calc(100vh-32px)] flex pb-5 flex-col">
-      <h2 className="py-5 px-4 text-xl font-semibold">업데이트</h2>
+    <section className="flex h-[calc(100vh-32px)] flex-col pb-5">
+      <h2 className="px-4 py-5 text-xl font-semibold">업데이트</h2>
       <div className="h-full overflow-y-scroll"></div>
     </section>
   );

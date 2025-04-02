@@ -1,19 +1,12 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { useNavPopoverStore } from "@/store/useNavPopoverStore";
-import { Ellipsis, X } from "lucide-react";
-import React from "react";
+'use client';
+import { Button } from '@/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
+import { useNavPopoverStore } from '@/store/useNavPopoverStore';
+import { Ellipsis, X } from 'lucide-react';
+import React from 'react';
 
-const commonButtonClasses = cn(
-  "p-2 rounded-full cursor-pointer",
-  "duration-75 hover:bg-gray-100"
-);
+const commonButtonClasses = cn('p-2 rounded-full cursor-pointer', 'duration-75 hover:bg-gray-100');
 
 function CloseButton() {
   const store = useNavPopoverStore();
@@ -41,12 +34,7 @@ function MeatballMenuButton() {
           <Ellipsis size={24} strokeWidth={3} />
         </button>
       </PopoverTrigger>
-      <PopoverContent
-        sideOffset={5}
-        align="end"
-        alignOffset={10}
-        className="p-1 w-fit"
-      >
+      <PopoverContent sideOffset={5} align="end" alignOffset={10} className="w-fit p-1">
         <Button
           ref={buttonRef}
           variant="ghost"
@@ -61,8 +49,8 @@ function MeatballMenuButton() {
 
 export default function MessagePopover() {
   return (
-    <section className="h-[calc(100vh-32px)] flex pb-5 flex-col">
-      <header className="flex justify-between items-center">
+    <section className="flex h-[calc(100vh-32px)] flex-col pb-5">
+      <header className="flex items-center justify-between">
         <div className="ml-2 flex items-center">
           <CloseButton />
           <h2 className="py-5 text-xl font-semibold">메세지</h2>
