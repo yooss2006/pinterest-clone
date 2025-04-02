@@ -1,5 +1,5 @@
-import { NavLink } from './nav-link';
 import { NavButtonList } from './nav-button-list';
+import { NavLink } from './nav-link';
 import { NavPopover } from './nav-popover';
 
 const navLinkList = [

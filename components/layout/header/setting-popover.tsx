@@ -1,9 +1,10 @@
 'use client';
 
+import { SquareArrowOutUpRight } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import React, { useEffect, useRef, useState } from 'react';
-import { SquareArrowOutUpRight } from 'lucide-react';
 
 const buttonOption = {
   setting: { options: ['설정', '홈피드 조정'], withIcon: false },

@@ -1,10 +1,12 @@
 'use client';
+
+import { Ellipsis, X } from 'lucide-react';
+import React from 'react';
+
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 import { useNavPopoverStore } from '@/store/useNavPopoverStore';
-import { Ellipsis, X } from 'lucide-react';
-import React from 'react';
 
 const commonButtonClasses = cn('p-2 rounded-full cursor-pointer', 'duration-75 hover:bg-gray-100');
 

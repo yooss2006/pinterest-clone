@@ -1,10 +1,11 @@
 'use client';
 
-import { navItemClasses } from '@/components/layout/header/nav-styles';
-import { useNavPopoverStore } from '@/store/useNavPopoverStore';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+import { navItemClasses } from '@/components/layout/header/nav-styles';
+import { useNavPopoverStore } from '@/store/useNavPopoverStore';
 
 type NavLinkProps = {
   href: string;

@@ -1,9 +1,10 @@
 'use client';
 
-import { navItemClasses } from '@/components/layout/header/nav-styles';
-import { useNavPopoverStore } from '@/store/useNavPopoverStore';
 import Image from 'next/image';
 import { ButtonHTMLAttributes, useCallback, useMemo } from 'react';
+
+import { navItemClasses } from '@/components/layout/header/nav-styles';
+import { useNavPopoverStore } from '@/store/useNavPopoverStore';
 
 type NavButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   icon: string;
