@@ -15,6 +15,8 @@ export function SearchForm() {
   const pathname = usePathname();
   const { open } = useSearchDialog();
 
+  const isProfilePage = pathname === '/profile';
+
   const handleHover = (hover: boolean) => () => setIsHovered(hover);
 
   return (
@@ -34,13 +36,13 @@ export function SearchForm() {
 
         {/* 인풋 영역 */}
         <Input
-          placeholder="내 핀 검색"
+          placeholder={isProfilePage ? '내 핀 검색' : '검색'}
           className={cn(
             'h-full w-full rounded-none rounded-r-xl border-none bg-gray-100 shadow-none transition-colors duration-150',
             'placeholder:text-base placeholder:text-gray-900',
             'focus:ring-0 focus:outline-none focus-visible:ring-0',
             isHovered && hoverBgClass,
-            pathname === '/profile' && 'rounded-r-none'
+            isProfilePage && 'rounded-r-none'
           )}
           onMouseEnter={handleHover(true)}
           onMouseLeave={handleHover(false)}
@@ -48,7 +50,7 @@ export function SearchForm() {
         />
 
         {/* 버튼을 감싸는 영역 */}
-        {pathname === '/profile' && (
+        {isProfilePage && (
           <div
             className={cn(
               'relative flex h-full items-center rounded-r-xl bg-gray-100 transition-colors duration-150',
