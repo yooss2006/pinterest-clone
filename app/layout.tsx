@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { Suspense } from 'react';
 
 import { Header } from '@/components/layout/header/header';
-import { SearchForm } from '@/components/layout/search/search-form';
+import { SearchPopoverContainer } from '@/components/layout/search/search';
+
 import './globals.css';
 
 const geistSans = Geist({
@@ -31,8 +33,10 @@ export default function RootLayout({
         <div className="flex h-full">
           <Header />
           <main className="w-full overflow-y-scroll">
-            <section aria-label="검색 및 프로필" className="px-5 py-4">
-              <SearchForm />
+            <section aria-label="검색 및 프로필">
+              <Suspense fallback={<div>Loading...</div>}>
+                <SearchPopoverContainer />
+              </Suspense>
             </section>
             {children}
           </main>
