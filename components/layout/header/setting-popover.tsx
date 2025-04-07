@@ -82,7 +82,7 @@ export default function SettingPopover() {
           key={`setting-list-${index}`}
           items={options}
           withIcon={withIcon}
-          active={active}
+          active={active as string}
         />
       ))}
     </section>

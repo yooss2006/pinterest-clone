@@ -1,8 +1,12 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import eslintPluginPrettier from 'eslint-plugin-prettier';
+
 import { FlatCompat } from '@eslint/eslintrc';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintPluginImport from 'eslint-plugin-import';
+import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import eslintPluginPrettier from 'eslint-plugin-prettier';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -36,7 +40,10 @@ const eslintConfig = [
       }
     },
     plugins: {
-      prettier: eslintPluginPrettier
+      prettier: eslintPluginPrettier,
+      'react-hooks': eslintPluginReactHooks,
+      'jsx-a11y': eslintPluginJsxA11y,
+      import: eslintPluginImport
     },
     rules: {
       'linebreak-style': ['error', 'unix'],
