@@ -2,32 +2,38 @@
 
 import { ChevronDown, Search } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import React, { useState } from 'react'; // useState 추가
+import React, { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useSearchDialog } from '@/hooks/use-search-dialog';
 import { cn } from '@/lib/utils';
+
 const hoverBgClass = 'bg-gray-200';
 
 export function SearchForm() {
   const [isHovered, setIsHovered] = useState(false);
   const pathname = usePathname();
-  const { open } = useSearchDialog();
+  const { isOpen, open } = useSearchDialog();
 
   const isProfilePage = pathname === '/profile';
 
   const handleHover = (hover: boolean) => () => setIsHovered(hover);
 
+  const handleClick = () => {
+    if (!isOpen) {
+      open();
+    }
+  };
+
   return (
     <form>
-      <div className="flex h-12 items-center">
+      <div
+        className={cn('flex h-12 items-center rounded-xl bg-gray-100', isHovered && hoverBgClass)}
+      >
         {/* 왼쪽 아이콘 영역 */}
         <div
-          className={cn(
-            'flex h-full items-center rounded-l-xl bg-gray-100 pl-4 transition-colors duration-150',
-            isHovered && hoverBgClass
-          )}
+          className={cn('flex h-full items-center pl-4 transition-colors duration-150')}
           onMouseEnter={handleHover(true)}
           onMouseLeave={handleHover(false)}
         >
@@ -38,30 +44,29 @@ export function SearchForm() {
         <Input
           placeholder={isProfilePage ? '내 핀 검색' : '검색'}
           className={cn(
-            'h-full w-full rounded-none rounded-r-xl border-none bg-gray-100 shadow-none transition-colors duration-150',
+            'h-full w-full rounded-none border-none shadow-none',
             'placeholder:text-base placeholder:text-gray-900',
             'focus:ring-0 focus:outline-none focus-visible:ring-0',
-            isHovered && hoverBgClass,
             isProfilePage && 'rounded-r-none'
           )}
           onMouseEnter={handleHover(true)}
           onMouseLeave={handleHover(false)}
-          onClick={open}
+          onClick={handleClick}
+          readOnly
         />
 
         {/* 버튼을 감싸는 영역 */}
         {isProfilePage && (
           <div
             className={cn(
-              'relative flex h-full items-center rounded-r-xl bg-gray-100 transition-colors duration-150',
-              'after:absolute after:-left-1 after:h-7 after:w-0.5 after:bg-gray-300',
-              isHovered && hoverBgClass
+              'relative flex h-full items-center',
+              'after:absolute after:-left-1 after:h-7 after:w-0.5 after:bg-gray-300'
             )}
           >
             <Button
               variant="ghost"
               className={cn(
-                'ml-1 h-full cursor-pointer rounded-r-lg px-8 font-bold',
+                'ml-1 h-full cursor-pointer rounded-xl px-8 font-bold',
                 'hover:bg-gray-300'
               )}
               type="button"
