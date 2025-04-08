@@ -1,11 +1,11 @@
 'use client';
 import { useState } from 'react';
 
-import { SearchDialog } from '@/components/layout/search/search-dialog';
-import { SearchForm } from '@/components/layout/search/search-form';
+import { SearchDialog } from '@/components/layout/search-profile-bar/search-dialog';
+import { SearchForm } from '@/components/layout/search-profile-bar/search-form';
 import { searchDialogContext } from '@/hooks/use-search-dialog';
 
-export function SearchPopoverContainer() {
+export function SearchProfileBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const value = {
