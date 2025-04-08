@@ -27,7 +27,7 @@ export function SearchForm() {
   };
 
   return (
-    <form>
+    <form className="w-full">
       <div
         className={cn('flex h-12 items-center rounded-xl bg-gray-100', isHovered && hoverBgClass)}
       >
